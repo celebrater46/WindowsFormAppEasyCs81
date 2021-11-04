@@ -22,10 +22,20 @@ namespace WindowsFormsAppEasyCs81
 
             btn1 = new Button();
             btn1.Text = "Rotate";
-            btn1.Width = 40;
+            btn1.Width = 60;
             btn1.Height = 20;
+            
+            btn2 = new Button();
+            btn2.Text = "Scale";
+            btn2.Width = 60;
+            btn2.Height = 20;
+            btn2.Top = btn1.Bottom;
 
             btn1.Click += new EventHandler(ClickBtn);
+            btn2.Click += new EventHandler(ClickBtn);
+
+            btn1.Parent = this;
+            btn2.Parent = this;
         }
 
         public void ClickBtn(Object sender, EventArgs e)

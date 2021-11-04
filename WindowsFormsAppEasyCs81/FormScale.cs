@@ -17,7 +17,7 @@ namespace WindowsFormsAppEasyCs81
             this.Text = "拡大縮小やで！";
             this.Width = 300;
             this.Height = 300;
-            img Image.FromFile("C:\\Users\\Enin\\RiderProjects\\WindowsFormsAppEasyCs81\\WindowsFormsAppEasyCs81\\img\\sunsymbol3.png");
+            img = Image.FromFile("C:\\Users\\Enin\\RiderProjects\\WindowsFormsAppEasyCs81\\WindowsFormsAppEasyCs81\\img\\sunsymbol3.png");
 
             rb1 = new RadioButton();
             rb1.Text = "普通やで";
@@ -42,10 +42,10 @@ namespace WindowsFormsAppEasyCs81
             rb3.Parent = gb;
             gb.Parent = this;
 
-            rb1.Click += new EventHandler();
-            rb2.Click += new EventHandler();
-            rb3.Click += new EventHandler();
-            this.Paint += new PaintEventHandler();
+            rb1.Click += new EventHandler(ClickRb);
+            rb2.Click += new EventHandler(ClickRb);
+            rb3.Click += new EventHandler(ClickRb);
+            this.Paint += new PaintEventHandler(PaintImg);
         }
 
         public void ClickRb(Object sender, EventArgs e)
@@ -72,7 +72,8 @@ namespace WindowsFormsAppEasyCs81
 
             if (i == 1)
             {
-                g.DrawImage(img, 0, 0);
+                // g.DrawImage(img, 0, 0, img.Width, img.Height);
+                g.DrawImage(img, 0, 0, img.Width, img.Height); // True Scale
             }
             else if (i == 2)
             {

@@ -33,7 +33,7 @@ namespace WindowsFormsAppEasyCs81
         {
             Graphics g = e.Graphics;
             // g.DrawImage(img, 0, 0);
-            g.DrawImage(img, 0, 0);
+            g.DrawImage(img, 0, 0, img.Width, img.Height); // True Scale
         }
     }
 }
